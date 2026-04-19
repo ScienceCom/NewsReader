@@ -7,15 +7,15 @@ Fitur Utama
 Mengambil data postingan/berita dari JSONPlaceholder API
 
 
--List View
+- List View
 Menampilkan daftar berita dalam bentuk card yang dapat di-scroll
 
 
--Detail View
+- Detail View
 Klik berita untuk melihat isi konten secara lengkap
 
 
--State Management
+- State Management
 Menangani kondisi:
 Loading
 Success
