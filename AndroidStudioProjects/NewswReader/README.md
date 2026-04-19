@@ -51,7 +51,7 @@ Screenshot
 Tambahkan screenshot di folder project kamu lalu tampilkan di sini
 
 - Home (List Berita)
-<img src="newshome).png" width="400" />
+<img src="newshome.png" width="400" />
 
 - Detail Berita
 <img src="detailnews.png" width="400" />
