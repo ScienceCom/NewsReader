@@ -1,1 +1,1 @@
-Masuk Kedalam Folder
+Masuk Kedalam Folder AndroidStudioProjects/NewswReader
