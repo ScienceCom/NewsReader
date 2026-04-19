@@ -5,10 +5,16 @@ Fitur Utama
 
 - Fetching Data
 Mengambil data postingan/berita dari JSONPlaceholder API
+
+
 -List View
 Menampilkan daftar berita dalam bentuk card yang dapat di-scroll
+
+
 -Detail View
 Klik berita untuk melihat isi konten secara lengkap
+
+
 -State Management
 Menangani kondisi:
 Loading
@@ -52,44 +58,38 @@ Tambahkan screenshot di folder project kamu lalu tampilkan di sini
 
 ❌ Kondisi Error
 
-📖 Cara Kerja Kode
-🧱 1. Model (Note.kt)
+Cara Kerja Kode
+1. Model (Note.kt)
 Data class dengan anotasi @Serializable
 Digunakan untuk memetakan JSON dari API ke object Kotlin
 @Serializable
-data class Note(
-    val id: Int,
-    val title: String,
-    val body: String
-)
-🌐 2. Network (ApiService.kt)
+
+2. Network (ApiService.kt)
 Mengatur konfigurasi HttpClient
 Menentukan endpoint API
-📦 3. Repository (NewsRepository.kt)
+
+4. Repository (NewsRepository.kt)
 Menyediakan fungsi:
 suspend fun getNews(): List<Note>
+
 UI tidak berinteraksi langsung dengan API
 Semua data diambil melalui repository
-🎨 4. UI (NewsScreen.kt)
-🔹 Pengambilan Data
+
+5. UI (NewsScreen.kt)
+- Pengambilan Data
 
 Menggunakan LaunchedEffect saat pertama kali layar dibuka:
 
-LaunchedEffect(Unit) {
-    loadNews()
-}
-🔹 State Management
-
-Menggunakan:
-
-mutableStateOf()
+- State Management
 
 Untuk menyimpan:
 
 daftar berita
 status loading
 pesan error
-🔹 Tampilan List
+
+
+- Tampilan List
 
 Menggunakan:
 
