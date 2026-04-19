@@ -51,16 +51,16 @@ Screenshot
 Tambahkan screenshot di folder project kamu lalu tampilkan di sini
 
 - Home (List Berita)
-<img src="newshome).png" width="800" />
+<img src="newshome).png" width="400" />
 
 - Detail Berita
-<img src="detailnews.png" width="800" />
+<img src="detailnews.png" width="400" />
 
 - Kondisi Loading
-<img src="refresh.png" width="800" />
+<img src="refresh.png" width="400" />
 
 - Repository Pattern
-<img src="repos.png" width="800" />
+<img src="repos.png" width="400" />
 
 Cara Kerja Kode
 1. Model (Note.kt)
