@@ -2,13 +2,14 @@ Aplikasi News Reader sederhana yang dibangun menggunakan Compose Multiplatform (
 Aplikasi ini mendemonstrasikan cara mengambil data dari API publik menggunakan Ktor Client, mengelolanya dengan Repository Pattern, dan menampilkannya dalam UI Jetpack Compose yang responsif.
 
 Fitur Utama
-Fetching Data
+
+- Fetching Data
 Mengambil data postingan/berita dari JSONPlaceholder API
-List View
+-List View
 Menampilkan daftar berita dalam bentuk card yang dapat di-scroll
-Detail View
+-Detail View
 Klik berita untuk melihat isi konten secara lengkap
-State Management
+-State Management
 Menangani kondisi:
 Loading
 Success
