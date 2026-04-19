@@ -101,10 +101,9 @@ LazyColumn
 
 Agar performa tetap optimal untuk list panjang
 
-▶️ Cara Menjalankan
-Clone repository:
-git clone https://github.com/username/news-reader-kmp.git
-Buka di Android Studio / IntelliJ
-Jalankan project sesuai target platform:
+- Cara Menjalankan
+1.Clone repository
+2.Buka di Android Studio / IntelliJ
+3.Jalankan project sesuai target platform:
 Android
 Desktop (jika tersedia)
