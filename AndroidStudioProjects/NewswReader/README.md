@@ -102,8 +102,12 @@ LazyColumn
 Agar performa tetap optimal untuk list panjang
 
 - Cara Menjalankan
+
+
 1.Clone repository
+  
 2.Buka di Android Studio / IntelliJ
+
 3.Jalankan project sesuai target platform:
 Android
 Desktop (jika tersedia)
