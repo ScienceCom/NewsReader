@@ -1,35 +1,105 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+Aplikasi News Reader sederhana yang dibangun menggunakan Compose Multiplatform (KMP).
+Aplikasi ini mendemonstrasikan cara mengambil data dari API publik menggunakan Ktor Client, mengelolanya dengan Repository Pattern, dan menampilkannya dalam UI Jetpack Compose yang responsif.
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+Fitur Utama
+Fetching Data
+Mengambil data postingan/berita dari JSONPlaceholder API
+List View
+Menampilkan daftar berita dalam bentuk card yang dapat di-scroll
+Detail View
+Klik berita untuk melihat isi konten secara lengkap
+State Management
+Menangani kondisi:
+Loading
+Success
+Error
+Refresh Data
+Tombol untuk mengambil ulang data terbaru
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-### Build and Run Android Application
+Tech Stack & Arsitektur
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
+Aplikasi ini mengikuti standar pengembangan modern:
 
-### Build and Run iOS Application
+Layer	Teknologi
+UI	Jetpack Compose Multiplatform
+Networking	Ktor Client
+Serialization	Kotlinx Serialization
+Architecture	Repository Pattern
 
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
 
----
+Penjelasan Arsitektur
+Repository Pattern
+Memisahkan:
+Logika pengambilan data (network)
+Logika tampilan (UI)
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+Sehingga kode lebih:
+
+modular
+mudah di-maintain
+scalable
+Screenshot
+
+Tambahkan screenshot di folder project kamu lalu tampilkan di sini
+
+🏠 Home (List Berita)
+
+📖 Detail Berita
+
+⏳ Kondisi Loading
+
+❌ Kondisi Error
+
+📖 Cara Kerja Kode
+🧱 1. Model (Note.kt)
+Data class dengan anotasi @Serializable
+Digunakan untuk memetakan JSON dari API ke object Kotlin
+@Serializable
+data class Note(
+    val id: Int,
+    val title: String,
+    val body: String
+)
+🌐 2. Network (ApiService.kt)
+Mengatur konfigurasi HttpClient
+Menentukan endpoint API
+📦 3. Repository (NewsRepository.kt)
+Menyediakan fungsi:
+suspend fun getNews(): List<Note>
+UI tidak berinteraksi langsung dengan API
+Semua data diambil melalui repository
+🎨 4. UI (NewsScreen.kt)
+🔹 Pengambilan Data
+
+Menggunakan LaunchedEffect saat pertama kali layar dibuka:
+
+LaunchedEffect(Unit) {
+    loadNews()
+}
+🔹 State Management
+
+Menggunakan:
+
+mutableStateOf()
+
+Untuk menyimpan:
+
+daftar berita
+status loading
+pesan error
+🔹 Tampilan List
+
+Menggunakan:
+
+LazyColumn
+
+Agar performa tetap optimal untuk list panjang
+
+▶️ Cara Menjalankan
+Clone repository:
+git clone https://github.com/username/news-reader-kmp.git
+Buka di Android Studio / IntelliJ
+Jalankan project sesuai target platform:
+Android
+Desktop (jika tersedia)
